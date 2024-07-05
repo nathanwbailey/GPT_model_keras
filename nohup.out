@@ -1,0 +1,174 @@
+2024-07-05 16:38:09.143515: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-07-05 16:38:09.143590: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-07-05 16:38:09.144742: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-07-05 16:38:09.150881: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-07-05 16:38:09.932986: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-07-05 16:38:11.340974: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-07-05 16:38:11.376007: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-07-05 16:38:11.376264: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-07-05 16:38:11.376933: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-07-05 16:38:11.377130: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-07-05 16:38:11.377288: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-07-05 16:38:11.455492: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-07-05 16:38:11.455723: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-07-05 16:38:11.455921: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-07-05 16:38:11.456077: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5491 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1060 6GB, pci bus id: 0000:01:00.0, compute capability: 6.1
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, None)]            0         
+                                                                 
+ token_and_position_embeddi  (None, None, 256)         2580480   
+ ng (TokenAndPositionEmbedd                                      
+ ing)                                                            
+                                                                 
+ transformer_block (Transfo  (None, None, 256)         658688    
+ rmerBlock)                                                      
+                                                                 
+ dense_2 (Dense)             (None, None, 10000)       2570000   
+                                                                 
+=================================================================
+Total params: 5809168 (22.16 MB)
+Trainable params: 5809168 (22.16 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Epoch 1/20
+2024-07-05 16:38:29.405678: I external/local_xla/xla/service/service.cc:168] XLA service 0x7f28fdba7130 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2024-07-05 16:38:29.405734: I external/local_xla/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA GeForce GTX 1060 6GB, Compute Capability 6.1
+2024-07-05 16:38:29.412289: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2024-07-05 16:38:29.428698: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8904
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1720193909.520772  333685 device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+
+generated text:
+wine review : us : california : zinfandel : well made in the structure site and this exuberant native grape , well priced and the estate - grown wine from thomas joe growing conditions . both in cool canyon and minerally on the palate , both maintaining precision and power . the mouthfeel and structure give it a sting to merit further bottle age . 
+
+4060/4060 - 172s - loss: 2.2532 - 172s/epoch - 42ms/step
+Epoch 2/20
+
+generated text:
+wine review : us : california : rhône - style red blend : a stunning deal of 48 % carignan , 20 % grenache and 37 % syrah that imparts in black cherry and cranberry . the palate offers complex plum and raspberry fruit hit on the nose , and flavors with enticing acidity . the palate delivers raspberry , cocoa powder , fruitcake - soaked in barrel accents . the fruit is full yet smooth at times but retains
+
+4060/4060 - 146s - loss: 1.9585 - 146s/epoch - 36ms/step
+Epoch 3/20
+
+generated text:
+wine review : france : alsace : riesling : smells and ripe , rather than any of fruit , this tastes of floral soap . it has a hint of sweetness , with a thin , dry , earthy finish in flavor . 
+
+4060/4060 - 144s - loss: 1.8885 - 144s/epoch - 35ms/step
+Epoch 4/20
+
+generated text:
+wine review : us : washington : cabernet sauvignon : the barrel - aged notes are out with its own to rank as oaky . dark in style , it needs this wine , but the balance seems a bit out there with more gravitas to it , though 1 % petit verdot . it sommelier ' s hard at the columbia valley also cabernet sauvignon ( 8 % ) . this is a blend of four 61 % new
+
+4060/4060 - 146s - loss: 1.8463 - 146s/epoch - 36ms/step
+Epoch 5/20
+
+generated text:
+wine review : france : burgundy : pinot noir : from two blocks of clos de [UNK] and premier cru vineyards , expressed around the legendary town of vosne - vosne , where both the vintage and this wine shows a fine sense of concentration , with plum and layers of structure . 
+
+4060/4060 - 152s - loss: 1.8160 - 152s/epoch - 37ms/step
+Epoch 6/20
+
+generated text:
+wine review : us : california : pinot noir : aromas of strawberry compote and vanilla meet with warmth on the nose of this light - bodied and accessible bottling from one of the region ' s coolest parts of the appellation . the palate sizzles with acidity , and a lovely balance that should pair well with lighter proteins , a lightly seasoned quaffer . 
+
+4060/4060 - 145s - loss: 1.7931 - 145s/epoch - 36ms/step
+Epoch 7/20
+
+generated text:
+wine review : italy : piedmont : nebbiolo : inky and fragrant , this opens with aromas of pressed iris , tobacco , exotic spice , camphor and chocolate . the palate offers pomegranate , steeped plum , ground pepper , licorice and a hint of pipe tobacco accent the sour cherry core of this stunning wine . tightly knit but refined tannins provide a firm structure which promises further development to unwind . drink 2018–2028 . 
+
+4060/4060 - 145s - loss: 1.7740 - 145s/epoch - 36ms/step
+Epoch 8/20
+
+generated text:
+wine review : france : bordeaux : bordeaux - style red blend : pale , fruity and with a soft texture and rich , this wine is a touch lean , giving a fine wine , fresh . 
+
+4060/4060 - 143s - loss: 1.7581 - 143s/epoch - 35ms/step
+Epoch 9/20
+
+generated text:
+wine review : new zealand : marlborough : pinot gris : this wine tastes big and could be a dog for pinot gris , with oaky spice and a harmonious , creamy texture . aromas of peach and melon are backed by ample weight and complexity . it ' s richly textured , but there ' s enough zip to make it perfect for another on the long - lasting beam of acidity and a long , velvety finish .
+
+4060/4060 - 145s - loss: 1.7444 - 145s/epoch - 36ms/step
+Epoch 10/20
+
+generated text:
+wine review : us : washington : syrah : the aromas are locked up at present with notes of char , vanilla and licorice . the palate is pillowy in feel , with savory flavors of sweet cherry and citrus that linger on the finish . 
+
+4060/4060 - 143s - loss: 1.7327 - 143s/epoch - 35ms/step
+Epoch 11/20
+
+generated text:
+wine review : france : bordeaux : bordeaux - style red blend : this comes from a selection of grapes exclusively from 80 - 20 - year - old vines . they are bold for a concentrated wine , the wine derives a great swathes of fresh black fruits . the fruitiness is a proper acidity keeps this structured effort . wait until 2015 . 
+
+4060/4060 - 145s - loss: 1.7219 - 145s/epoch - 36ms/step
+Epoch 12/20
+
+generated text:
+wine review : italy : piedmont : nebbiolo : aromas of dark baking spice , woodland berries , tilled soil and dark cooking spice slowly emerge on this glass . the lively , straightforward palate offers dried cherry , violet and crushed raspberry alongside firm but rather fleeting tannins . it ' s already delicious but will be best to be drunk somewhat at soon . 
+
+4060/4060 - 145s - loss: 1.7125 - 145s/epoch - 36ms/step
+Epoch 13/20
+
+generated text:
+wine review : france : loire valley : chenin blanc : it is crisp and clean . made from a selection of top sites , from vines are just 120 feet above the house , low - yielding and fresh , developing hints of almonds , ripe and intense citrus flavor . ready to drink . 
+
+4060/4060 - 144s - loss: 1.7036 - 144s/epoch - 36ms/step
+Epoch 14/20
+
+generated text:
+wine review : france : bordeaux : bordeaux - style red blend : this is a softly structured wine with considerable acidity and a layer of tannin . it ' s rich , full of flavors that are ripe and generous , ripe and ripe . drink now , but developing so drink from 2017 . 
+
+4060/4060 - 144s - loss: 1.6959 - 144s/epoch - 36ms/step
+Epoch 15/20
+
+generated text:
+wine review : us : california : merlot : this is bright in flavor , with cherry and cranberry and pomegranate , which is a terrific back - value wine . 
+
+4060/4060 - 143s - loss: 1.6886 - 143s/epoch - 35ms/step
+Epoch 16/20
+
+generated text:
+wine review : italy : southern italy : aglianico : made entirely with negroamaro , this area of southern italy conveys aromas of forest floor , exotic spice and toasted oak . the vibrant palate doles out red apple , roasted coffee beans , redcurrant , licorice and black pepper while supple tannins generate an assertive finish . 
+
+4060/4060 - 144s - loss: 1.6817 - 144s/epoch - 36ms/step
+Epoch 17/20
+
+generated text:
+wine review : argentina : mendoza province : pinot grigio : fleshy and bland , with several flat qualities . 
+
+4060/4060 - 142s - loss: 1.6754 - 142s/epoch - 35ms/step
+Epoch 18/20
+
+generated text:
+wine review : us : california : mourvèdre : ripe olallieberries , lavender and mace whirl about nose on this rich bottling by rising winemaker [UNK] to [UNK] ' s [UNK] on rhône - style [UNK] from mourvèdre also [UNK] and [UNK] grenache . wide , tarry flavors steadily growing region show on the age of grenache , counoise . awkward and tannic with black - plum notes come out on the palate as does , with hints of damp
+
+4060/4060 - 145s - loss: 1.6695 - 145s/epoch - 36ms/step
+Epoch 19/20
+
+generated text:
+wine review : us : washington : dolcetto : the aromas pop on this wine , with notes of bright raspberries , sweet plum , smoked meat , mocha and mineral . the tannins are grainy on the palate . 
+
+4060/4060 - 143s - loss: 1.6641 - 143s/epoch - 35ms/step
+Epoch 20/20
+
+generated text:
+wine review : italy : northeastern italy : pinot nero : if you want deeper refreshment pinot nero and on the aromas are followed by silky cherry with oak , spice and a pretty touch of cedar . 
+
+4060/4060 - 143s - loss: 1.6587 - 143s/epoch - 35ms/step
+
+generated text:
+wine review : us : california : zinfandel : here ' s a fruity zinfandel that shows zin fans of crisp enough to pair with tire rubber tannins and a touch of sweet and under tart raspberry jam . completely dry and spritzy , with good grapes in zinfandel . 
+
+
+generated text:
+wine review : italy : veneto : glera : made from organically farmed grapes , this opens with fresh , crisp aromas of white flower and citrus . the palate is medium - bodied , with a hint of green apple and citrus . 
+
+
+generated text:
+wine review : germany : mosel : riesling : this is a remarkably minerally riesling , boasting aromas of ripe yellow peach and apple , with a hint of petrol . it ' s round and lush on the palate , with a lemony acidity that lingers on the finish . 
+
