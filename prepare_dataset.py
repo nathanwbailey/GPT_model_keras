@@ -27,6 +27,7 @@ def prepare_dataset(
         return text
 
     def prepare_inputs(text: tf.Tensor) -> tuple[tf.Tensor, tf.Tensor]:
+        """Tokenize the incoming sequence."""
         text = tf.expand_dims(text, -1)
         tokenized_sequences = vectorize_layer(text)
         return tokenized_sequences[:, :-1], tokenized_sequences[:, 1:]

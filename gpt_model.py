@@ -13,6 +13,7 @@ def create_gpt_model(
     num_heads: int,
     key_dim: int,
 ) -> keras.models.Model:
+    """Create GPT Model."""
     inputs = keras.layers.Input(shape=(None,), dtype=tf.int32)
     x = TokenAndPositionEmbedding(max_len_input, vocab_size, embed_dim)(
         inputs

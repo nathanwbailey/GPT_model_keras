@@ -36,6 +36,8 @@ def casual_attention_mask(
 
 
 class TransformerBlock(keras.layers.Layer):
+    """Transformer Block Layer."""
+
     def __init__(
         self,
         num_heads: int,
@@ -47,6 +49,7 @@ class TransformerBlock(keras.layers.Layer):
         ] = casual_attention_mask,
         dropout_rate: float = 0.1,
     ) -> None:
+        """Init variables and layers."""
         super().__init__()
         self.num_heads = num_heads
         self.key_dim = key_dim
@@ -67,6 +70,7 @@ class TransformerBlock(keras.layers.Layer):
         self.mask_function = mask_function
 
     def call(self, inputs: tf.Tensor) -> tf.Tensor:
+        """Forward Pass."""
         input_shape = tf.shape(inputs)
         batch_size = input_shape[0]
         seq_len = input_shape[1]
@@ -82,11 +86,28 @@ class TransformerBlock(keras.layers.Layer):
         output = self.layer_norm_2(out1 + ffn_output)
         return output
 
+    def get_config(self) -> dict:
+        """Update config for saving model."""
+        config = super().get_config()
+        config.update(
+            {
+                "key_dim": self.key_dim,
+                "embed_dim": self.embed_dim,
+                "num_heads": self.num_heads,
+                "ff_dim": self.ff_dim,
+                "dropout_rate": self.dropout_rate,
+            }
+        )
+        return config
+
 
 class TokenAndPositionEmbedding(keras.layers.Layer):
+    """Token and positioning embedding layer for a sequence."""
+
     def __init__(
         self, max_len_input: int, vocab_size: int, embed_dim: int
     ) -> None:
+        """Init variables and layers."""
         super().__init__()
         self.max_len = max_len_input
         self.vocab_size = vocab_size
@@ -99,6 +120,7 @@ class TokenAndPositionEmbedding(keras.layers.Layer):
         )
 
     def call(self, x: tf.Tensor) -> tf.Tensor:
+        """Forward Pass."""
         len_input = tf.shape(x)[-1]
         positions = tf.range(start=0, limit=len_input, delta=1)
         positions = self.pos_emb(positions)
@@ -106,6 +128,7 @@ class TokenAndPositionEmbedding(keras.layers.Layer):
         return x + positions
 
     def get_config(self) -> dict:
+        """Update config for saving model."""
         config = super().get_config()
         config.update(
             {
