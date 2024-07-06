@@ -138,6 +138,3 @@ class TokenAndPositionEmbedding(keras.layers.Layer):
             }
         )
         return config
-
-
-# class MultiHeadAttentionLayer()
