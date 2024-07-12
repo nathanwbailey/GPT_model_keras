@@ -4,7 +4,7 @@ Implements a GPT Model in Keras on the Wine Reviews Dataset: https://www.kaggle.
 
 Further information can be found in the following blog post:
 
-
+https://nathanbaileyw.medium.com/transformers-explained-the-holy-grail-of-genai-9d4a46408418
 
 ### Code:
 The main code is located in the following files:
