@@ -14,15 +14,15 @@ def casual_attention_mask(
     Create a Casual Mask for
     the multi head attention layer.
     """
-    i = tf.range(key_length)[:, None]
-    j = tf.range(query_length)
-    # Create a mask of size (key_length, query_length)
-    # (i, j) is true if i >= j - query_length + key_length
-    mask = i >= j - query_length + key_length
+    i = tf.range(query_length)[:, None]
+    j = tf.range(key_length)
+    # Create a mask of size (query_length, key_length)
+    # (i, j) is true if i >= j - key_length + query_length
+    mask = i >= j - key_length + query_length
     # Cast the mask to the dtype
     mask = tf.cast(mask, dtype)
     # Reshape the mask to add a dimension
-    mask = tf.reshape(mask, [1, key_length, query_length])
+    mask = tf.reshape(mask, [1, query_length, key_length])
     # Gives a tensor = [batch_size, 1, 1]
     mult = tf.concat(
         [tf.expand_dims(batch_size, -1), tf.constant([1, 1], dtype=tf.int32)],
